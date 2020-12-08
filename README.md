@@ -26,8 +26,8 @@ WHERE
 ''')
 ```
 Which will result in the following pandas data frame:
-| actor                                   | actorLabel        |
-| --------------------------------------- | ----------------- |
+| actor | actorLabel |
+| --- | --- |
 | http://www.wikidata.org/entity/Q3295000 | Sterling K. Brown |
 
 ## Credits
