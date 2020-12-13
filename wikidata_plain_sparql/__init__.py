@@ -8,8 +8,6 @@ from bokeh.plotting import figure, ColumnDataSource, show, output_notebook
 from bokeh.models import HoverTool
 from bokeh.tile_providers import CARTODBPOSITRON, get_provider
 
-from pyproj import transform
-
 def query(query, view=None):
     data = __load_from_api(query)
     if view == 'map':

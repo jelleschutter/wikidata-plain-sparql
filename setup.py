@@ -16,8 +16,7 @@ setuptools.setup(
     install_requires=[
         'pandas',
         'requests',
-        'bokeh',
-        'pyproj'
+        'bokeh'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
