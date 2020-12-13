@@ -14,7 +14,10 @@ setuptools.setup(
     url='https://github.com/jelleschutter/wikidata-plain-sparql',
     packages=setuptools.find_packages(),
     install_requires=[
+        'pandas',
         'requests',
+        'bokeh',
+        'pyproj'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
