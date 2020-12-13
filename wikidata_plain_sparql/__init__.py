@@ -75,7 +75,7 @@ def __render_map(data):
            x_axis_type="mercator", y_axis_type="mercator")
     p.add_tile(tile_provider)
 
-    p.circle(x="lon", y="lat", size=15, fill_color="blue", fill_alpha=0.8, source=source)
+    p.circle(x="lon", y="lat", size=10, fill_color="blue", fill_alpha=0.8, source=source)
 
     tooltips = []
 
