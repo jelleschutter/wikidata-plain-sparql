@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='wikidata_plain_sparql',
-    version='0.0.3',
+    version='0.0.4',
     author='Jelle Schutter',
     author_email='jelle@schutter.xyz',
     description='Query WikiData in plain SPARQL',
