@@ -5,7 +5,7 @@ import re
 import math
 
 from bokeh.plotting import figure, ColumnDataSource, show, output_notebook
-from bokeh.models import HoverTool
+from bokeh.models import HoverTool, BoxZoomTool, WheelZoomTool
 from bokeh.tile_providers import CARTODBPOSITRON, get_provider
 
 def query(query, view=None):
@@ -75,17 +75,31 @@ def __render_map(data):
     output_notebook()
 
     tile_provider = get_provider(CARTODBPOSITRON)
-    p = figure(x_range=(minLon - marginLon, maxLon + marginLon), y_range=(minLat - marginLat, maxLat + marginLat),
-           x_axis_type="mercator", y_axis_type="mercator")
+    p = figure(
+        x_range=(minLon - marginLon, maxLon + marginLon),
+        y_range=(minLat - marginLat, maxLat + marginLat),
+        x_axis_type='mercator',
+        y_axis_type='mercator',
+        match_aspect=True,
+        tools='pan,reset'
+    )
+
+
     p.add_tile(tile_provider)
 
-    p.circle(x="lon", y="lat", size=10, fill_color="blue", fill_alpha=0.8, source=source)
+    p.circle(x='lon', y='lat', size=10, fill_color='blue', fill_alpha=0.8, source=source)
 
     tooltips = []
 
     for column in columns:
         if 'info_' + column in info:
             tooltips.append((column, '@info_' + column))
+
+    # keep aspect ratio while zooming
+    p.add_tools(BoxZoomTool(match_aspect=True))
+    wheel_zoom = WheelZoomTool(zoom_on_axis=False)
+    p.add_tools(wheel_zoom)
+    p.toolbar.active_scroll = wheel_zoom
 
     p.add_tools(HoverTool(tooltips=tooltips))
 
