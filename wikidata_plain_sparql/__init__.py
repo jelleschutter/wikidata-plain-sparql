@@ -51,6 +51,10 @@ def __render_map(data):
             if 'info_' + column in info and isinstance(info['info_' + column], list):
                 info['info_' + column].append(popupText)
 
+    if len(lat) == 0 or len(lon) == 0:
+        print('Unable to render map: no results.')
+        return None
+
     info['lat'] = lat
     info['lon'] = lon
 
