@@ -5,10 +5,10 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='wikidata_plain_sparql',
-    version='0.0.4',
+    version='0.0.5',
     author='Jelle Schutter',
     author_email='jelle@schutter.xyz',
-    description='Query WikiData in plain SPARQL',
+    description='Query WikiData in plain SPARQL and display the result as a map or data frame',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/jelleschutter/wikidata-plain-sparql',
