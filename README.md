@@ -19,6 +19,7 @@ wikidata.query(query, view=None)
 ```
 
 ## Examples
+The following examples are also available on Google Colab and can be executed without any additional setup: [https://colab.research.google.com/github/jelleschutter/wikidata-plain-sparql/blob/assets/wikidata_plain_sparql_examples.ipynb](https://colab.research.google.com/github/jelleschutter/wikidata-plain-sparql/blob/assets/wikidata_plain_sparql_examples.ipynb)
 ### Data Frame
 ```python
 # query WikiData
